@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Docker使用指南-容器 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="容器是独立运行的一个或一组应用，以及它们的运行态环境.虚拟机可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用.
+
+应用容器静态打包：把 应用程序 及其 运行时 打包为一个镜像；动态运行：以一个应用容器的形式运行这个应用。
+系统容器 ： LXC/LXD 和 OpenVZ （相当于一个轻量级虚拟机，目的是解除操作系统与底层的耦合）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker使用指南-容器">
+<meta property="og:url" content="http://yoursite.com/2016/08/24/Docker使用指南-容器/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="容器是独立运行的一个或一组应用，以及它们的运行态环境.虚拟机可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用.
+
+应用容器静态打包：把 应用程序 及其 运行时 打包为一个镜像；动态运行：以一个应用容器的形式运行这个应用。
+系统容器 ： LXC/LXD 和 OpenVZ （相当于一个轻量级虚拟机，目的是解除操作系统与底层的耦合）">
+<meta property="og:updated_time" content="2016-08-24T07:49:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker使用指南-容器">
+<meta name="twitter:description" content="容器是独立运行的一个或一组应用，以及它们的运行态环境.虚拟机可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用.
+
+应用容器静态打包：把 应用程序 及其 运行时 打包为一个镜像；动态运行：以一个应用容器的形式运行这个应用。
+系统容器 ： LXC/LXD 和 OpenVZ （相当于一个轻量级虚拟机，目的是解除操作系统与底层的耦合）">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Docker使用指南-容器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/24/Docker使用指南-容器/" class="article-date">
+  <time datetime="2016-08-24T07:48:58.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker使用指南-容器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>容器</code>是独立运行的一个或一组应用，以及它们的运行态环境.<br><code>虚拟机</code>可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用.</p>
+<ul>
+<li>应用容器<br>静态打包：把 应用程序 及其 运行时 打包为一个镜像；<br>动态运行：以一个应用容器的形式运行这个应用。</li>
+<li>系统容器 ： LXC/LXD 和 OpenVZ （相当于一个轻量级虚拟机，目的是解除操作系统与底层的耦合）</li>
+</ul>
+<a id="more"></a>
+<p>对最终用户而言，Docker提供的是一个标准化的交付方式；基于版本控制的方式去构建应用环境。推荐不同的项目运行不同的容器挂载不同的代码；可以  当作软件生命周期管理工具使用；<br>把应用跑起来只需要两样事情：一个64位的linux内核<br>一个打包正确的docker镜像地址，或者Dockerfile<br>这样，用户，不管是大企业还是普通想在服务端跑程序的人，只需要这2者就完了。不用去操心一堆的数据库、消息队列、中间件、jvm参数、等等等的所有麻烦的事情</p>
+<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><p>启动容器有两种方式</p>
+<ol>
+<li>一种是基于镜像新建一个容器并启动</li>
+<li>另外一个是将在终止状态（stopped）的容器重新启动。</li>
+</ol>
+<h3 id="1-新建并启动"><a href="#1-新建并启动" class="headerlink" title="1. 新建并启动"></a>1. 新建并启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// e.g  下面的命令输出一个 “Hello World”，之后终止容器</div><div class="line">➜  ~ docker run ubuntu:14.04 /bin/echo &apos;Hello world&apos;</div><div class="line">Hello world</div><div class="line"></div><div class="line">// e.g  下面的命令则启动一个 bash 终端，允许用户进行交互</div><div class="line">// -t 选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上</div><div class="line">// -i 则让容器的标准输入保持打开</div><div class="line">➜  ~ docker run -t -i ubuntu:14.04 /bin/bash</div><div class="line">root@01b6b7d32eae:/#</div></pre></td></tr></table></figure>
+<p>当利用 docker run来创建容器时，Docker 在后台运行的标准操作包括：</p>
+<ul>
+<li>检查本地是否存在指定的镜像，不存在就从公有仓库下载</li>
+<li>利用镜像创建并启动一个容器</li>
+<li>分配一个文件系统，并在只读的镜像层外面挂载一层可读写层</li>
+<li>从宿主主机配置的网桥接口中桥接一个虚拟接口到容器中去</li>
+<li>从地址池配置一个 ip 地址给容器</li>
+<li>执行用户指定的应用程序</li>
+<li>执行完毕后容器被终止</li>
+</ul>
+<h3 id="2-启动已终止容器"><a href="#2-启动已终止容器" class="headerlink" title="2.  启动已终止容器"></a>2.  启动已终止容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">docker start &lt;容器ID&gt;</div><div class="line">docker start &lt;镜像ID&gt;</div><div class="line"># 连接到终端上</div><div class="line">docker attach &lt;容器ID&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/24/Docker使用指南-容器/" data-id="ciyn001fe0001tt8aal2fpfsn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/24/Docker使用指南-数据管理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker使用指南-数据管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/24/Docker使用指南-镜像/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Docker使用指南-镜像</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/24/mac下Apache配置/">mac下Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-数据管理/">Docker使用指南-数据管理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-容器/">Docker使用指南-容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-镜像/">Docker使用指南-镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Mac-OS-X-安装-Docker-及-入门/">Mac OS X 安装 Docker 及 入门</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

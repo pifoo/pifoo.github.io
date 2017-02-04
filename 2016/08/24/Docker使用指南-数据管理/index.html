@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Docker使用指南-数据管理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Docker 数据管理 Docker 内部以及容器之间管理数据主要有两种方式：
+
+数据卷（Data volumes）
+数据卷容器（Data volume containers）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker使用指南-数据管理">
+<meta property="og:url" content="http://yoursite.com/2016/08/24/Docker使用指南-数据管理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Docker 数据管理 Docker 内部以及容器之间管理数据主要有两种方式：
+
+数据卷（Data volumes）
+数据卷容器（Data volume containers）">
+<meta property="og:updated_time" content="2016-08-24T07:50:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker使用指南-数据管理">
+<meta name="twitter:description" content="Docker 数据管理 Docker 内部以及容器之间管理数据主要有两种方式：
+
+数据卷（Data volumes）
+数据卷容器（Data volume containers）">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Docker使用指南-数据管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/24/Docker使用指南-数据管理/" class="article-date">
+  <time datetime="2016-08-24T07:49:43.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker使用指南-数据管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Docker-数据管理"><a href="#Docker-数据管理" class="headerlink" title="Docker 数据管理"></a>Docker 数据管理</h2><p> Docker 内部以及容器之间管理数据主要有两种方式：</p>
+<ol>
+<li>数据卷（Data volumes）</li>
+<li>数据卷容器（Data volume containers）</li>
+</ol>
+<a id="more"></a>
+<h3 id="1-数据卷（Data-volumes）"><a href="#1-数据卷（Data-volumes）" class="headerlink" title="1.  数据卷（Data volumes）"></a>1.  数据卷（Data volumes）</h3><p>数据卷是被设计用来持久化数据的，它的生命周期独立于容器，Docker不会在容器被删除后自动删除数据卷，并且也不存在垃圾回收这样的机制来处理没有任何容器引用的数据卷;<br>数据卷是一个可供一个或多个容器使用的特殊目录，它绕过 UFS，可以提供很多有用的特性：</p>
+<ul>
+<li>数据卷可以在容器之间共享和重用</li>
+<li>对数据卷的修改会立马生效</li>
+<li>对数据卷的更新，不会影响镜像</li>
+<li>数据卷默认会一直存在，即使容器被删除</li>
+</ul>
+<blockquote>
+<p>注意：数据卷的使用，类似于 Linux 下对目录或文件进行 mount，镜像中的被指定为挂载点的目录中的文件会隐藏掉，能显示看的是挂载的数据卷。</p>
+</blockquote>
+<h4 id="1-1-创建一个数据卷"><a href="#1-1-创建一个数据卷" class="headerlink" title="1.1 创建一个数据卷"></a>1.1 创建一个数据卷</h4><p>在用 docker run命令的时候，使用 -v 标记来创建一个数据卷并挂载到容器里。在一次 run 中多次使用可以挂载多个数据卷<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// e.g  创建一个名为 web 的容器，并加载一个数据卷到容器的 /webapp目录</div><div class="line">$ sudo docker run -d -P --name web -v /webapp training/webapp python app.py</div><div class="line">*注意：也可以在 Dockerfile 中使用 VOLUME</div><div class="line"> 来添加一个或者多个新的卷到由该镜像创建的任意容器</div></pre></td></tr></table></figure></p>
+<h4 id="1-2-删除数据卷"><a href="#1-2-删除数据卷" class="headerlink" title="1.2 删除数据卷"></a>1.2 删除数据卷</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// e.g  在删除容器的同时移除数据卷</div><div class="line">docker rm -v</div></pre></td></tr></table></figure>
+<h4 id="1-3-挂载一个主机目录作为数据卷"><a href="#1-3-挂载一个主机目录作为数据卷" class="headerlink" title="1.3 挂载一个主机目录作为数据卷"></a>1.3 挂载一个主机目录作为数据卷</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// -v 标记也可以指定挂载一个本地主机的目录到容器中去</div><div class="line">// e.g  上面的命令加载主机的 /src/webapp 目录到容器的 /opt/webapp 目录</div><div class="line">// ro 加了表示挂载为只读</div><div class="line">$ docker run -d -P --name web -v /src/webapp:/opt/webapp:ro training/webapp python app.py</div></pre></td></tr></table></figure>
+<h4 id="1-4-查看数据卷的具体信息"><a href="#1-4-查看数据卷的具体信息" class="headerlink" title="1.4  查看数据卷的具体信息"></a>1.4  查看数据卷的具体信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 查看指定容器的信息</div><div class="line">$ docker inspect web</div></pre></td></tr></table></figure>
+<h3 id="2-数据卷容器（Data-volume-containers）"><a href="#2-数据卷容器（Data-volume-containers）" class="headerlink" title="2. 数据卷容器（Data volume containers）"></a>2. 数据卷容器（Data volume containers）</h3><h3 id="3-备份、恢复、迁移数据卷"><a href="#3-备份、恢复、迁移数据卷" class="headerlink" title="3.  备份、恢复、迁移数据卷"></a>3.  备份、恢复、迁移数据卷</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/24/Docker使用指南-数据管理/" data-id="ciyn001ff0002tt8a6h396rrd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/24/mac下Apache配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mac下Apache配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/24/Docker使用指南-容器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Docker使用指南-容器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/24/mac下Apache配置/">mac下Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-数据管理/">Docker使用指南-数据管理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-容器/">Docker使用指南-容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-镜像/">Docker使用指南-镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Mac-OS-X-安装-Docker-及-入门/">Mac OS X 安装 Docker 及 入门</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

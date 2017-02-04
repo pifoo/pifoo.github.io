@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ES6环境搭建(Node &amp; babel) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6环境搭建(Node & babel)">
+<meta property="og:url" content="http://yoursite.com/2016/05/18/ES6环境搭建-Node-babel/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
+<meta property="og:updated_time" content="2017-02-01T14:20:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6环境搭建(Node & babel)">
+<meta name="twitter:description" content="ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ES6环境搭建-Node-babel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/18/ES6环境搭建-Node-babel/" class="article-date">
+  <time datetime="2016-05-18T06:37:58.000Z" itemprop="datePublished">2016-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6环境搭建(Node &amp; babel)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
+<a id="more"></a>
+<h2 id="一、ES6-参考"><a href="#一、ES6-参考" class="headerlink" title="一、ES6 参考"></a>一、ES6 参考</h2><ul>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">http://es6.ruanyifeng.com/</a></li>
+<li><a href="https://github.com/tc39/ecma262" target="_blank" rel="external">ECMAScript当前所有提案  Github.com/tc39/ecma262 </a></li>
+</ul>
+<h2 id="二、支持能力"><a href="#二、支持能力" class="headerlink" title="二、支持能力"></a>二、支持能力</h2><ul>
+<li><a href="http://kangax.github.io/compat-table/es6/" target="_blank" rel="external">http://kangax.github.io/compat-table/es6/</a></li>
+<li><a href="https://github.com/paulmillr/es6-shim" target="_blank" rel="external">https://github.com/paulmillr/es6-shim</a></li>
+</ul>
+<h2 id="三、运行环境"><a href="#三、运行环境" class="headerlink" title="三、运行环境"></a>三、运行环境</h2><ul>
+<li><a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></li>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></li>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></li>
+</ul>
+<h2 id="四、特性检测"><a href="#四、特性检测" class="headerlink" title="四、特性检测"></a>四、特性检测</h2><ol>
+<li><p>查看Node所有已经实现的ES6特性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ~ node --v8-options | grep harmony</div></pre></td></tr></table></figure>
+</li>
+<li><p>检查各种运行环境对ES6的支持情况<br><a href="http://ruanyf.github.io/es-checker/" target="_blank" rel="external">es-checker</a>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ~ npm install -g es-checker</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看本机支持ES6的程度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ~ es-checker</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="五、Babel转码器"><a href="#五、Babel转码器" class="headerlink" title="五、Babel转码器"></a>五、Babel转码器</h2><ul>
+<li><a href="https://babeljs.io/" target="_blank" rel="external">babel 官网</a></li>
+<li><a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md" target="_blank" rel="external">Babel 用户手册</a></li>
+</ul>
+<ol>
+<li><p>工程初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    ➜  ES6 git:(master) ✗ npm init   </div><div class="line">（$ mkdir es2015_demo &amp;&amp; cd es2015_demo &amp;&amp; git init &amp;&amp; npm init）</div></pre></td></tr></table></figure>
+</li>
+<li><p>本地安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    ➜  ES6 git:(master) ✗ npm install --save-dev babel-cli (建议安装在当前工程目录,非全局)</div><div class="line">    ➜  ES6 git:(master) ✗ npm install babel-preset-stage-0 --save-dev  (ES7)</div><div class="line">/*</div><div class="line">      ➜  ~ npm install -g babel-cli  </div><div class="line">     npm uninstall --global babel-cli</div><div class="line">     */</div></pre></td></tr></table></figure>
+</li>
+<li><p>转码前后(ES6-&gt;ES5)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//转码前</div><div class="line">[1,2,3].map(n =&gt; console.log(n + 1));</div><div class="line"></div><div class="line">//转码后</div><div class="line">[1, 2, 3].map(function(n) &#123;</div><div class="line">    return console.log(n + 1);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件.babelrc<br>Babel的配置文件是.babelrc，存放在项目的根目录下(使用Babel的第一步，就是配置这个文件);</p>
+<ul>
+<li><p>创建 .babelrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ touch .babelrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>.babelrc该文件用来设置转码规则和插件，基本格式如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;presets&quot;: [],</div><div class="line">    &quot;plugins&quot;: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>为presets字段设定转码规则(语法集)，官方提供以下的规则集，可以根据需要安装  </p>
+<ul>
+<li><p>ES6转码规则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-es2015</div></pre></td></tr></table></figure>
+</li>
+<li><p>react转码规则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-react</div></pre></td></tr></table></figure>
+</li>
+<li><p>ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-stage-0</div><div class="line">$ npm install --save-dev babel-preset-stage-1</div><div class="line">$ npm install --save-dev babel-preset-stage-2</div><div class="line">$ npm install --save-dev babel-preset-stage-3</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>安装转码规则集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ npm install --save-dev babel-preset-es2015</div><div class="line">➜  ES6 git:(master) ✗ npm install --save-dev babel-preset-react</div><div class="line">➜  ES6 git:(master) ✗ npm install --save-dev babel-preset-stage-3</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后，将这些规则加入.babelrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;presets&quot;: [</div><div class="line">        &quot;es2015&quot;,</div><div class="line">        &quot;react&quot;,</div><div class="line">        &quot;stage-3&quot;</div><div class="line">    ],</div><div class="line">    &quot;plugins&quot;: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>babel基本用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># 转码结果输出到标准输出</div><div class="line">$ babel example.js</div><div class="line"></div><div class="line"># 转码结果写入一个文件 (--out-file 或 -o 参数指定输出文件)</div><div class="line">$ babel example.js --out-file compiled.js</div><div class="line">或者</div><div class="line">$ babel example.js -o compiled.js</div><div class="line"></div><div class="line"># 整个目录转码 (--out-dir 或 -d 参数指定输出目录)</div><div class="line">$ babel src --out-dir lib</div><div class="line">或者</div><div class="line">$ babel src -d lib</div><div class="line"></div><div class="line"># -s 参数生成source map文件</div><div class="line">$ babel src -d lib -s</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="六、package-json配置"><a href="#六、package-json配置" class="headerlink" title="六、package.json配置"></a>六、package.json配置</h2><ol>
+<li><p>工程初始化,生成 package.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ npm init</div></pre></td></tr></table></figure>
+</li>
+<li><p>改写package.json  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;babel-cli&quot;:&quot;^6.6.5&quot;,</div><div class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.9.0&quot;,</div><div class="line">    &quot;babel-preset-react&quot;: &quot;^6.5.0&quot;,</div><div class="line">    &quot;babel-preset-stage-3&quot;: &quot;^6.5.0&quot;</div><div class="line">&#125;,</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;babel src -d lib&quot;  //将指定目录转码</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>转码执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ npm run build</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="七、babel-之-babel-node"><a href="#七、babel-之-babel-node" class="headerlink" title="七、babel 之 babel-node"></a>七、babel 之 babel-node</h2><p><strong>babel-cli</strong> 工具自带一个 <strong>babel-node</strong> 命令，提供一个支持ES6的REPL环境;</p>
+<ol>
+<li><p>它支持Node的REPL环境的所有功能，而且可以直接运行ES6代码.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ babel-node</div><div class="line">&gt; (x =&gt; x * 2)(1)</div><div class="line">2</div></pre></td></tr></table></figure>
+</li>
+<li><p>直接运行脚本文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ babel-node es6.js</div><div class="line">2</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行脚本命令 运行脚本</p>
+<ul>
+<li><p>更新package.json:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;babel src -d lib&quot;,</div><div class="line">    &quot;script&quot;: &quot;babel-node *.js&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ npm run script</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="八、浏览器环境"><a href="#八、浏览器环境" class="headerlink" title="八、浏览器环境"></a>八、浏览器环境</h2><blockquote>
+<p><a href="https://babeljs.io/repl/" target="_blank" rel="external">REPL ES6-&gt;ES5 在线编译器</a></p>
+</blockquote>
+<h2 id="九、与其他工具的配合"><a href="#九、与其他工具的配合" class="headerlink" title="九、与其他工具的配合"></a>九、与其他工具的配合</h2><p>许多工具需要Babel进行前置转码，这里举两个例子：ESLint 和 Mocha;</p>
+<ol>
+<li><p>ESLint用于静态检查代码的语法和风格，安装命令如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ npm install --save-dev eslint babel-eslint</div></pre></td></tr></table></figure>
+</li>
+<li><p>在项目根目录下，新建一个配置文件.eslintrc :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  ES6 git:(master) ✗ touch .eslintrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>在其中加入parser字段 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;parser&quot;: &quot;babel-eslint&quot;,</div><div class="line">    &quot;rules&quot;: &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>再在package.json之中，加入相应的 scripts 脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&quot;devDependencies&quot;: &#123;</div><div class="line">    ...</div><div class="line">    &quot;eslint&quot;: &quot;^2.10.2&quot;,</div><div class="line">    &quot;babel-eslint&quot;: &quot;^6.0.4&quot;</div><div class="line">&#125;,</div><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">      ...</div><div class="line">    &quot;eslint&quot;: &quot;eslint my-files.js&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>Mocha则是一个测试框架，如果需要执行使用ES6语法的测试脚本，可以修package.json的scripts.test</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123; &quot;test&quot;: &quot;mocha --ui qunit --compilers js:babel-core/register&quot;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面命令中，–compilers参数指定脚本的转码器，规定后缀名为js的文件，都需要使用babel-core/register先转码;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/18/ES6环境搭建-Node-babel/" data-id="ciyn001fp0004tt8acyqzwmkt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/24/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/06/图解Git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">图解Git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/24/mac下Apache配置/">mac下Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-数据管理/">Docker使用指南-数据管理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-容器/">Docker使用指南-容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-镜像/">Docker使用指南-镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Mac-OS-X-安装-Docker-及-入门/">Mac OS X 安装 Docker 及 入门</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

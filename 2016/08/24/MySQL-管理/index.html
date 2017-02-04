@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL 管理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1234567# 查看mysql进程ps -ef | grep mysqld# ortop# 启动 / 重启 / 停止 mysql服务器sudo mysql.server start [restart | stop]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 管理">
+<meta property="og:url" content="http://yoursite.com/2016/08/24/MySQL-管理/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1234567# 查看mysql进程ps -ef | grep mysqld# ortop# 启动 / 重启 / 停止 mysql服务器sudo mysql.server start [restart | stop]">
+<meta property="og:updated_time" content="2016-08-24T07:41:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 管理">
+<meta name="twitter:description" content="1234567# 查看mysql进程ps -ef | grep mysqld# ortop# 启动 / 重启 / 停止 mysql服务器sudo mysql.server start [restart | stop]">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MySQL-管理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/24/MySQL-管理/" class="article-date">
+  <time datetime="2016-08-24T07:39:27.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL 管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 查看mysql进程</div><div class="line">ps -ef | grep mysqld</div><div class="line"># or</div><div class="line">top</div><div class="line"></div><div class="line"># 启动 / 重启 / 停止 mysql服务器</div><div class="line">sudo mysql.server start [restart | stop]</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="mysqladmin-命令"><a href="#mysqladmin-命令" class="headerlink" title="mysqladmin 命令"></a>mysqladmin 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">→ mysqladmin --help</div></pre></td></tr></table></figure>
+<h2 id="管理MySQL的命令"><a href="#管理MySQL的命令" class="headerlink" title="管理MySQL的命令"></a>管理MySQL的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; help;</div></pre></td></tr></table></figure>
+<h2 id="e-g"><a href="#e-g" class="headerlink" title="e.g"></a>e.g</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"># 连接数据库</div><div class="line">→ mysql -uroot -p              </div><div class="line"></div><div class="line">#  列出所有数据库</div><div class="line">mysql&gt; SHOW DATABASES;    </div><div class="line"></div><div class="line"># 选择当前数据库    </div><div class="line">mysql&gt; USE 数据库名;          </div><div class="line"></div><div class="line"># 显示当前数据库的所有 数据表          </div><div class="line">mysql&gt; SHOW TABLES;</div><div class="line">mysql&gt; SHOW TABLES;</div><div class="line">+-----------------+</div><div class="line">| Tables_in_test  |</div><div class="line">+-----------------+</div><div class="line">| migrations      |</div><div class="line">| password_resets |</div><div class="line">| users           |</div><div class="line">+-----------------+</div><div class="line"></div><div class="line"># 显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息  </div><div class="line">mysql&gt; SHOW COLUMNS FROM users;</div><div class="line">+----------------+------------------+------+-----+---------+----------------+</div><div class="line">| Field          | Type             | Null | Key | Default | Extra          |</div><div class="line">+----------------+------------------+------+-----+---------+----------------+</div><div class="line">| id             | int(10) unsigned | NO   | PRI | NULL    | auto_increment |</div><div class="line">| name           | varchar(255)     | NO   |     | NULL    |                |</div><div class="line">| email          | varchar(255)     | NO   | UNI | NULL    |                |</div><div class="line">| password       | varchar(255)     | NO   |     | NULL    |                |</div><div class="line">| remember_token | varchar(100)     | YES  |     | NULL    |                |</div><div class="line">| created_at     | timestamp        | YES  |     | NULL    |                |</div><div class="line">| updated_at     | timestamp        | YES  |     | NULL    |                |</div><div class="line">+----------------+------------------+------+-----+---------+----------------+</div><div class="line"></div><div class="line"># 显示 数据表 的详细索引信息</div><div class="line">mysql&gt; SHOW INDEX FROM users;</div><div class="line">+-------+------------+--------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+</div><div class="line">| Table | Non_unique | Key_name           | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |</div><div class="line">+-------+------------+--------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+</div><div class="line">| users |          0 | PRIMARY            |            1 | id          | A         |           0 |     NULL | NULL   |      | BTREE      |         |               |</div><div class="line">| users |          0 | users_email_unique |            1 | email       | A         |           0 |     NULL | NULL   |      | BTREE      |         |               |</div><div class="line">+-------+------------+--------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+</div><div class="line"></div><div class="line"># SHOW TABLE STATUS LIKE [FROM db_name] [LIKE &apos;pattern&apos;] \G</div><div class="line"># 该命令将输出Mysql数据库管理系统的性能及统计信息</div><div class="line"># 1. e.g  # 显示数据库 test 中所有表的信息</div><div class="line">mysql&gt; SHOW TABLE STATUS FROM test;</div><div class="line">+-----------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| Name            | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time | Check_time | Collation       | Checksum | Create_options | Comment |</div><div class="line">+-----------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| migrations      | InnoDB |      10 | Dynamic    |    2 |           8192 |       16384 |               0 |            0 |         0 |           NULL | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">| password_resets | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |               0 |            0 |         0 |           NULL | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">| users           | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |               0 |            0 |         0 |              1 | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">+-----------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line"></div><div class="line"># 2. e.g  表名以migr开头的表的信息</div><div class="line">mysql&gt; SHOW TABLE STATUS FROM test LIKE &apos;migr%&apos;;</div><div class="line">+------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| Name       | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time | Check_time | Collation       | Checksum | Create_options | Comment |</div><div class="line">+------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| migrations | InnoDB |      10 | Dynamic    |    2 |           8192 |       16384 |               0 |            0 |         0 |           NULL | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">+------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line"></div><div class="line"># 3. e.g  加上 \G，查询结果按列打印</div><div class="line">mysql&gt; SHOW TABLE STATUS FROM test LIKE &apos;migr%&apos;\G;</div><div class="line">*************************** 1. row ***************************</div><div class="line">           Name: migrations</div><div class="line">         Engine: InnoDB</div><div class="line">        Version: 10</div><div class="line">     Row_format: Dynamic</div><div class="line">           Rows: 2</div><div class="line"> Avg_row_length: 8192</div><div class="line">    Data_length: 16384</div><div class="line">Max_data_length: 0</div><div class="line">   Index_length: 0</div><div class="line">      Data_free: 0</div><div class="line"> Auto_increment: NULL</div><div class="line">    Create_time: 2016-08-10 15:45:50</div><div class="line">    Update_time: NULL</div><div class="line">     Check_time: NULL</div><div class="line">      Collation: utf8_unicode_ci</div><div class="line">       Checksum: NULL</div><div class="line"> Create_options:</div><div class="line">        Comment:</div><div class="line">1 row in set (0.00 sec)</div><div class="line"></div><div class="line">ERROR:</div><div class="line">No query specified</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/24/MySQL-管理/" data-id="ciyn001g40009tt8aqg6wcagq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/24/mac下mysql环境配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mac下mysql环境配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/24/mac下Apache配置/">mac下Apache配置</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-数据管理/">Docker使用指南-数据管理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-容器/">Docker使用指南-容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Docker使用指南-镜像/">Docker使用指南-镜像</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/24/Mac-OS-X-安装-Docker-及-入门/">Mac OS X 安装 Docker 及 入门</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
