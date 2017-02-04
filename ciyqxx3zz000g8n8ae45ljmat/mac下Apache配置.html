@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="mac下Apache配置"/>
+
+
+
+
+  <meta name="keywords" content="Apache," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/ciyqxx3zz000g8n8ae45ljmat/mac下Apache配置.html"/>
+
+
+<meta name="description" content="Apache配置在OS X 10.11.5中是自带Apache软件的，我们只需要启动对应的服务就好了，以下命令是操作Apache时常用的几个命令：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac下Apache配置">
+<meta property="og:url" content="https://pifoo.github.io/ciyqxx3zz000g8n8ae45ljmat/mac下Apache配置.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="Apache配置在OS X 10.11.5中是自带Apache软件的，我们只需要启动对应的服务就好了，以下命令是操作Apache时常用的几个命令：">
+<meta property="og:updated_time" content="2017-02-04T08:20:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mac下Apache配置">
+<meta name="twitter:description" content="Apache配置在OS X 10.11.5中是自带Apache软件的，我们只需要启动对应的服务就好了，以下命令是操作Apache时常用的几个命令：">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> mac下Apache配置 · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/about">
+        
+        
+          About
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          mac下Apache配置
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Aug 24, 2016
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Apache配置"><span class="toc-text">Apache配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Laravel-Homestead"><span class="toc-text">Laravel Homestead</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <h2 id="Apache配置"><a href="#Apache配置" class="headerlink" title="Apache配置"></a>Apache配置</h2><p>在OS X 10.11.5中是自带Apache软件的，我们只需要启动对应的服务就好了，以下命令是操作Apache时常用的几个命令：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1、打开网络共享</div><div class="line">   打开&quot;系统偏好设置&quot;-&gt;&quot;共享&quot;，在&quot;互联网共享&quot;那一项前面打√。</div><div class="line"></div><div class="line"># which apachectl</div><div class="line">/usr/sbin/apachectl</div><div class="line"></div><div class="line"># 启动Apache服务</div><div class="line">sudo apachectl start</div><div class="line"></div><div class="line"># 重新启动Apache服务</div><div class="line">sudo apachectl restart</div><div class="line"></div><div class="line"># 关闭Apache服务</div><div class="line">sudo apachectl stop</div><div class="line"></div><div class="line"># 查看Apache的版本</div><div class="line">httpd -v</div></pre></td></tr></table></figure>
+<p>在Macbook pro下，Apache的网站服务器根目录在/Library/WebServer/Documents 路径下在终端输入<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp /Library/WebServer/Documents/index.html.en /Library/WebServer/Documents/info.php</div></pre></td></tr></table></figure></p>
+<p>即在Apache的根目录下复制index.html.en文件并重命名为info.php</p>
+<h2 id="Laravel-Homestead"><a href="#Laravel-Homestead" class="headerlink" title="Laravel Homestead"></a>Laravel Homestead</h2><p><a href="https://laravel.com/docs/5.2/homestead" target="_blank" rel="external">https://laravel.com/docs/5.2/homestead</a></p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://my.oschina.net/joanfen/blog/171109" target="_blank" rel="external">http://my.oschina.net/joanfen/blog/171109</a>   √<br><a href="http://www.jellythink.com/archives/783" target="_blank" rel="external">http://www.jellythink.com/archives/783</a></p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Apache/">Apache</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/ciyqxx3z700008n8acc806mdu/Docker使用指南-数据管理.html">
+        <span class="next-text nav-default">Docker使用指南-数据管理</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>

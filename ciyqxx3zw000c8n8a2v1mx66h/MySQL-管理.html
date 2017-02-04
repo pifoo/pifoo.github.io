@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="MySQL 管理"/>
+
+
+
+
+  <meta name="keywords" content="MySQL," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/ciyqxx3zw000c8n8a2v1mx66h/MySQL-管理.html"/>
+
+
+<meta name="description" content="1234567# 查看mysql进程ps -ef | grep mysqld# ortop# 启动 / 重启 / 停止 mysql服务器sudo mysql.server start [restart | stop]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 管理">
+<meta property="og:url" content="https://pifoo.github.io/ciyqxx3zw000c8n8a2v1mx66h/MySQL-管理.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="1234567# 查看mysql进程ps -ef | grep mysqld# ortop# 启动 / 重启 / 停止 mysql服务器sudo mysql.server start [restart | stop]">
+<meta property="og:updated_time" content="2017-02-04T08:20:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 管理">
+<meta name="twitter:description" content="1234567# 查看mysql进程ps -ef | grep mysqld# ortop# 启动 / 重启 / 停止 mysql服务器sudo mysql.server start [restart | stop]">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> MySQL 管理 · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/about">
+        
+        
+          About
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          MySQL 管理
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Aug 24, 2016
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysqladmin-命令"><span class="toc-text">mysqladmin 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#管理MySQL的命令"><span class="toc-text">管理MySQL的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#e-g"><span class="toc-text">e.g</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 查看mysql进程</div><div class="line">ps -ef | grep mysqld</div><div class="line"># or</div><div class="line">top</div><div class="line"></div><div class="line"># 启动 / 重启 / 停止 mysql服务器</div><div class="line">sudo mysql.server start [restart | stop]</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="mysqladmin-命令"><a href="#mysqladmin-命令" class="headerlink" title="mysqladmin 命令"></a>mysqladmin 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">→ mysqladmin --help</div></pre></td></tr></table></figure>
+<h2 id="管理MySQL的命令"><a href="#管理MySQL的命令" class="headerlink" title="管理MySQL的命令"></a>管理MySQL的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql&gt; help;</div></pre></td></tr></table></figure>
+<h2 id="e-g"><a href="#e-g" class="headerlink" title="e.g"></a>e.g</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"># 连接数据库</div><div class="line">→ mysql -uroot -p              </div><div class="line"></div><div class="line">#  列出所有数据库</div><div class="line">mysql&gt; SHOW DATABASES;    </div><div class="line"></div><div class="line"># 选择当前数据库    </div><div class="line">mysql&gt; USE 数据库名;          </div><div class="line"></div><div class="line"># 显示当前数据库的所有 数据表          </div><div class="line">mysql&gt; SHOW TABLES;</div><div class="line">mysql&gt; SHOW TABLES;</div><div class="line">+-----------------+</div><div class="line">| Tables_in_test  |</div><div class="line">+-----------------+</div><div class="line">| migrations      |</div><div class="line">| password_resets |</div><div class="line">| users           |</div><div class="line">+-----------------+</div><div class="line"></div><div class="line"># 显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息  </div><div class="line">mysql&gt; SHOW COLUMNS FROM users;</div><div class="line">+----------------+------------------+------+-----+---------+----------------+</div><div class="line">| Field          | Type             | Null | Key | Default | Extra          |</div><div class="line">+----------------+------------------+------+-----+---------+----------------+</div><div class="line">| id             | int(10) unsigned | NO   | PRI | NULL    | auto_increment |</div><div class="line">| name           | varchar(255)     | NO   |     | NULL    |                |</div><div class="line">| email          | varchar(255)     | NO   | UNI | NULL    |                |</div><div class="line">| password       | varchar(255)     | NO   |     | NULL    |                |</div><div class="line">| remember_token | varchar(100)     | YES  |     | NULL    |                |</div><div class="line">| created_at     | timestamp        | YES  |     | NULL    |                |</div><div class="line">| updated_at     | timestamp        | YES  |     | NULL    |                |</div><div class="line">+----------------+------------------+------+-----+---------+----------------+</div><div class="line"></div><div class="line"># 显示 数据表 的详细索引信息</div><div class="line">mysql&gt; SHOW INDEX FROM users;</div><div class="line">+-------+------------+--------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+</div><div class="line">| Table | Non_unique | Key_name           | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |</div><div class="line">+-------+------------+--------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+</div><div class="line">| users |          0 | PRIMARY            |            1 | id          | A         |           0 |     NULL | NULL   |      | BTREE      |         |               |</div><div class="line">| users |          0 | users_email_unique |            1 | email       | A         |           0 |     NULL | NULL   |      | BTREE      |         |               |</div><div class="line">+-------+------------+--------------------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+</div><div class="line"></div><div class="line"># SHOW TABLE STATUS LIKE [FROM db_name] [LIKE &apos;pattern&apos;] \G</div><div class="line"># 该命令将输出Mysql数据库管理系统的性能及统计信息</div><div class="line"># 1. e.g  # 显示数据库 test 中所有表的信息</div><div class="line">mysql&gt; SHOW TABLE STATUS FROM test;</div><div class="line">+-----------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| Name            | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time | Check_time | Collation       | Checksum | Create_options | Comment |</div><div class="line">+-----------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| migrations      | InnoDB |      10 | Dynamic    |    2 |           8192 |       16384 |               0 |            0 |         0 |           NULL | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">| password_resets | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |               0 |            0 |         0 |           NULL | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">| users           | InnoDB |      10 | Dynamic    |    0 |              0 |       16384 |               0 |            0 |         0 |              1 | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">+-----------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line"></div><div class="line"># 2. e.g  表名以migr开头的表的信息</div><div class="line">mysql&gt; SHOW TABLE STATUS FROM test LIKE &apos;migr%&apos;;</div><div class="line">+------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| Name       | Engine | Version | Row_format | Rows | Avg_row_length | Data_length | Max_data_length | Index_length | Data_free | Auto_increment | Create_time         | Update_time | Check_time | Collation       | Checksum | Create_options | Comment |</div><div class="line">+------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line">| migrations | InnoDB |      10 | Dynamic    |    2 |           8192 |       16384 |               0 |            0 |         0 |           NULL | 2016-08-10 15:45:50 | NULL        | NULL       | utf8_unicode_ci |     NULL |                |         |</div><div class="line">+------------+--------+---------+------------+------+----------------+-------------+-----------------+--------------+-----------+----------------+---------------------+-------------+------------+-----------------+----------+----------------+---------+</div><div class="line"></div><div class="line"># 3. e.g  加上 \G，查询结果按列打印</div><div class="line">mysql&gt; SHOW TABLE STATUS FROM test LIKE &apos;migr%&apos;\G;</div><div class="line">*************************** 1. row ***************************</div><div class="line">           Name: migrations</div><div class="line">         Engine: InnoDB</div><div class="line">        Version: 10</div><div class="line">     Row_format: Dynamic</div><div class="line">           Rows: 2</div><div class="line"> Avg_row_length: 8192</div><div class="line">    Data_length: 16384</div><div class="line">Max_data_length: 0</div><div class="line">   Index_length: 0</div><div class="line">      Data_free: 0</div><div class="line"> Auto_increment: NULL</div><div class="line">    Create_time: 2016-08-10 15:45:50</div><div class="line">    Update_time: NULL</div><div class="line">     Check_time: NULL</div><div class="line">      Collation: utf8_unicode_ci</div><div class="line">       Checksum: NULL</div><div class="line"> Create_options:</div><div class="line">        Comment:</div><div class="line">1 row in set (0.00 sec)</div><div class="line"></div><div class="line">ERROR:</div><div class="line">No query specified</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/">MySQL</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/ciyqxx401000i8n8aefigo82n/mac下mysql环境配置.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Mac下mysql环境配置</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/ciyqxx3zk00048n8an3fe9kxq/ES6环境搭建-Node-babel.html">
+        <span class="next-text nav-default">ES6环境搭建(Node & Babel)</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>

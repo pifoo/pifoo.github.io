@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="浅显易懂的Git教程"/>
+
+
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/ciyqxx404000k8n8aobn8lxxc/浅显易懂的Git教程.html"/>
+
+
+<meta name="description" content="1. 认识Git一个分布式的版本控制系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅显易懂的Git教程">
+<meta property="og:url" content="https://pifoo.github.io/ciyqxx404000k8n8aobn8lxxc/浅显易懂的Git教程.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="1. 认识Git一个分布式的版本控制系统">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/43373-5def84572dbd59f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/43373-922062d774dee2a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-04T08:19:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅显易懂的Git教程">
+<meta name="twitter:description" content="1. 认识Git一个分布式的版本控制系统">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/43373-5def84572dbd59f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> 浅显易懂的Git教程 · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/about">
+        
+        
+          About
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          浅显易懂的Git教程
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Mar 5, 2015
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-认识Git"><span class="toc-text">1. 认识Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-仓库初始化"><span class="toc-text">2. 仓库初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Git工作流"><span class="toc-text">3. Git工作流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-添加和提交"><span class="toc-text">4. 添加和提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-推送改动"><span class="toc-text">5. 推送改动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-分支"><span class="toc-text">6. 分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-更新与合并"><span class="toc-text">7. 更新与合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-标签"><span class="toc-text">8. 标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-替换本地改动"><span class="toc-text">9. 替换本地改动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-实用小贴士"><span class="toc-text">10. 实用小贴士</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <h2 id="1-认识Git"><a href="#1-认识Git" class="headerlink" title="1. 认识Git"></a>1. 认识Git</h2><p>一个分布式的版本控制系统</p>
+<a id="more"></a>
+<h2 id="2-仓库初始化"><a href="#2-仓库初始化" class="headerlink" title="2. 仓库初始化"></a>2. 仓库初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 1. 工程目录</div><div class="line">➜  GitAction:  pwd</div><div class="line">/Users/.../GitAction</div><div class="line"></div><div class="line">// 2. 创建新仓库</div><div class="line">➜  GitAction: git init                                           // 初始化仓库(本地)</div><div class="line"></div><div class="line">// 2. 检出仓库</div><div class="line">➜  GitAction: git clone  pathURL/to/repository  [fileName]       // 创建一个仓库的克隆版本(远程or本地)</div></pre></td></tr></table></figure>
+<h2 id="3-Git工作流"><a href="#3-Git工作流" class="headerlink" title="3. Git工作流"></a>3. Git工作流</h2><p>本地仓库由 git 维护的三棵“树”组成</p>
+<blockquote>
+<ol>
+<li>工作目录，它持有实际文件；</li>
+<li>暂存区（Index），它像个缓存区域，临时保存你的改动；</li>
+<li>HEAD，它指向你最后一次提交的结果；</li>
+</ol>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/43373-5def84572dbd59f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Git工作流"></p>
+<h2 id="4-添加和提交"><a href="#4-添加和提交" class="headerlink" title="4. 添加和提交"></a>4. 添加和提交</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 1. 添加[改动]到暂存区</div><div class="line">➜  git add &lt;filename&gt;</div><div class="line">➜  git add *</div><div class="line"></div><div class="line">// 2. 提交实际改动：</div><div class="line">➜  git commit -m &quot;代码变更说明&quot;    // 至此，代码已提交到HEAD,但还未提交至远程仓库</div></pre></td></tr></table></figure>
+<h2 id="5-推送改动"><a href="#5-推送改动" class="headerlink" title="5. 推送改动"></a>5. 推送改动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 1.  将本地仓库连接到某个远程服务器</div><div class="line">➜  git remote add origin &lt;server&gt;</div><div class="line">// 2. 提交到远端仓库</div><div class="line">➜  git push [-u] origin master       // 可以把 master 换成你想要推送的任何分支;   [-u] 空仓库初次提交</div></pre></td></tr></table></figure>
+<h2 id="6-分支"><a href="#6-分支" class="headerlink" title="6. 分支"></a>6. 分支</h2><blockquote>
+<p>分支是用来将特性开发绝缘开来的；<br>在你创建仓库的时候，<em>master</em> 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/43373-922062d774dee2a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="分支"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 创建一个叫做“feature_x”的分支，并切换过去：</div><div class="line">➜  git checkout -b feature_x</div><div class="line"></div><div class="line">// 切换回主分支：</div><div class="line">➜  git checkout master</div><div class="line"></div><div class="line">// 再把新建的分支删掉：</div><div class="line">➜  git branch -d feature_x</div><div class="line"></div><div class="line">// 除非你将分支推送到远端仓库，不然该分支就是 *不为他人所见的*：</div><div class="line">➜  git push origin &lt;branch&gt;</div></pre></td></tr></table></figure>
+<h2 id="7-更新与合并"><a href="#7-更新与合并" class="headerlink" title="7. 更新与合并"></a>7. 更新与合并</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 更新最新改动至本地仓库，执行：</div><div class="line">➜  git pull</div><div class="line"></div><div class="line">// e.g 在当前工作目录中 获取（fetch） 并 合并（merge）远端的改动</div><div class="line">// 合并其他分支到当前分支（例如 master），执行：</div><div class="line">➜  git merge &lt;branch&gt;</div><div class="line">// git 会尝试去自动合并改动</div><div class="line">// 可能出现冲突（conflicts）， 这时需要修改并合并这些冲突（conflicts）；</div><div class="line">// 改完之后，执行如下命令以将它们标记为合并成功：</div><div class="line">➜  git add &lt;filename&gt;</div><div class="line"></div><div class="line">// 在合并改动之前，可以使用如下命令预览差异：</div><div class="line">➜  git diff &lt;source_branch&gt; &lt;target_branch&gt;</div></pre></td></tr></table></figure>
+<h2 id="8-标签"><a href="#8-标签" class="headerlink" title="8. 标签"></a>8. 标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 执行如下命令为指定提交版本创建一个叫做 *1.0.0* 的标签：</div><div class="line">➜  git tag 1.0.0 1b2e1d63ff            // *1b2e1d63ff* 每次提交时的 ID标记 前 10 位字符</div><div class="line"></div><div class="line">// 获取提交 ID：</div><div class="line">➜  git log</div></pre></td></tr></table></figure>
+<h2 id="9-替换本地改动"><a href="#9-替换本地改动" class="headerlink" title="9. 替换本地改动"></a>9. 替换本地改动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 用HEAD 中的最新内容替换掉工作目录中的文件</div><div class="line">➜  git checkout -- &lt;filename&gt;       // 已添加到暂存区的改动以及新文件都不会受到影响</div><div class="line"></div><div class="line">// 丢弃你在本地的所有改动与提交，到服务器上获取最新的版本历史，并将本地主分支指向它：</div><div class="line">➜  git fetch origin</div><div class="line">➜  git reset --hard origin/master</div></pre></td></tr></table></figure>
+<h2 id="10-实用小贴士"><a href="#10-实用小贴士" class="headerlink" title="10. 实用小贴士"></a>10. 实用小贴士</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">内建的图形化 git：gitk</div><div class="line"></div><div class="line">// 彩色的 git 输出：</div><div class="line">git config color.ui true</div><div class="line"></div><div class="line">// 显示历史记录时，每个提交的信息只显示一行：</div><div class="line">git config format.pretty oneline</div><div class="line"></div><div class="line">// 交互式添加文件到暂存区：</div><div class="line">git add -i</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<p> <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external"> Git教程 - <a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰</a>出品</a><br><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="external">git fast-version-control</a><br><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git简明教程</a><br><a href="http://learngitbranching.js.org" target="_blank" rel="external">在线可视化Git演练</a></p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Git/">Git</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/ciyqxx3zr00098n8abtfapzkt/Laravel-5-x-环境配置.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Laravel 5.x 环境配置</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/ciyqxx3zm00058n8ajrgzyxq6/Git-基础.html">
+        <span class="next-text nav-default">Git 基础</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>
