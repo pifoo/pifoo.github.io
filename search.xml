@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[mac下Apache配置]]></title>
-      <url>https://pifoo.github.io/ciyr5vj49000nox8ac3agal3l/mac%E4%B8%8BApache%E9%85%8D%E7%BD%AE.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrk000qkt8axb9idh2b/mac%E4%B8%8BApache%E9%85%8D%E7%BD%AE.html</url>
       <content type="html"><![CDATA[<h2 id="Apache配置"><a href="#Apache配置" class="headerlink" title="Apache配置"></a>Apache配置</h2><p>在OS X 10.11.5中是自带Apache软件的，我们只需要启动对应的服务就好了，以下命令是操作Apache时常用的几个命令：</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1、打开网络共享</div><div class="line">   打开&quot;系统偏好设置&quot;-&gt;&quot;共享&quot;，在&quot;互联网共享&quot;那一项前面打√。</div><div class="line"></div><div class="line"># which apachectl</div><div class="line">/usr/sbin/apachectl</div><div class="line"></div><div class="line"># 启动Apache服务</div><div class="line">sudo apachectl start</div><div class="line"></div><div class="line"># 重新启动Apache服务</div><div class="line">sudo apachectl restart</div><div class="line"></div><div class="line"># 关闭Apache服务</div><div class="line">sudo apachectl stop</div><div class="line"></div><div class="line"># 查看Apache的版本</div><div class="line">httpd -v</div></pre></td></tr></table></figure>
@@ -19,7 +19,7 @@
     
     <entry>
       <title><![CDATA[Docker使用指南-数据管理]]></title>
-      <url>https://pifoo.github.io/ciyr5vj3h0000ox8aocrgblx8/Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86.html</url>
+      <url>https://pifoo.github.io/ciyr8mkqz0002kt8auodn51uo/Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86.html</url>
       <content type="html"><![CDATA[<h2 id="Docker-数据管理"><a href="#Docker-数据管理" class="headerlink" title="Docker 数据管理"></a>Docker 数据管理</h2><p> Docker 内部以及容器之间管理数据主要有两种方式：</p>
 <ol>
 <li>数据卷（Data volumes）</li>
@@ -45,7 +45,7 @@
     
     <entry>
       <title><![CDATA[Docker使用指南-容器]]></title>
-      <url>https://pifoo.github.io/ciyr5vj3m0002ox8aj333609b/Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E5%AE%B9%E5%99%A8.html</url>
+      <url>https://pifoo.github.io/ciyr8mkqt0000kt8ajdhbvhg9/Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E5%AE%B9%E5%99%A8.html</url>
       <content type="html"><![CDATA[<p><code>容器</code>是独立运行的一个或一组应用，以及它们的运行态环境.<br><code>虚拟机</code>可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用.</p>
 <ul>
 <li>应用容器<br>静态打包：把 应用程序 及其 运行时 打包为一个镜像；<br>动态运行：以一个应用容器的形式运行这个应用。</li>
@@ -75,7 +75,7 @@
     
     <entry>
       <title><![CDATA[Docker使用指南-镜像]]></title>
-      <url>https://pifoo.github.io/ciyr5vj3q0005ox8aaj1wfwqe/Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E9%95%9C%E5%83%8F.html</url>
+      <url>https://pifoo.github.io/ciyr8mkr40005kt8aj84wmxu8/Docker%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E9%95%9C%E5%83%8F.html</url>
       <content type="html"><![CDATA[<p>Docker 项目的目标是实现轻量级的操作系统虚拟化解决方案。 Docker 的基础是 Linux 容器（LXC）等技术;容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。</p>
 <a id="more"></a>
 <p>Docker 包括三个基本概念：</p>
@@ -101,7 +101,7 @@
     
     <entry>
       <title><![CDATA[Mac OS X 安装 Docker 及 入门]]></title>
-      <url>https://pifoo.github.io/ciyr5vj46000hox8aie014uuq/Mac-OS-X-%E5%AE%89%E8%A3%85-Docker-%E5%8F%8A-%E5%85%A5%E9%97%A8.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrg000hkt8arqkeueez/Mac-OS-X-%E5%AE%89%E8%A3%85-Docker-%E5%8F%8A-%E5%85%A5%E9%97%A8.html</url>
       <content type="html"><![CDATA[<h2 id="1、安装（macOS环境）"><a href="#1、安装（macOS环境）" class="headerlink" title="1、安装（macOS环境）"></a>1、安装（macOS环境）</h2><h3 id="1-1-官网下载-Docker-Toolbox-来安装-Docker"><a href="#1-1-官网下载-Docker-Toolbox-来安装-Docker" class="headerlink" title="1.1 官网下载 Docker Toolbox 来安装 Docker"></a>1.1 官网下载 <a href="https://www.docker.com/toolbox" target="_blank" rel="external">Docker Toolbox</a> 来安装 <a href="https://www.docker.com" target="_blank" rel="external">Docker</a></h3><p>Docker Toolbox 提供了以下工具：</p>
 <blockquote>
 <p>1.2 用于运行 docker-machine 二进制文件的 Docker Machine<br>  1.2 用于运行 docker 二进行文件的 Docker Engine<br>  1.3 用于运行 docker-compose 二进行文件的 Docker Compose (Mac 特有)<br>  1.4 Kitematic，Docker 的图形用户界面<br>  1.5 用于 Docker 命令行环且预先配置好的 shell<br>  1.6 Oracle VM VirtualBox</p>
@@ -157,7 +157,7 @@
     
     <entry>
       <title><![CDATA[Mac下mysql环境配置]]></title>
-      <url>https://pifoo.github.io/ciyr5vj4c000qox8azizeluak/mac%E4%B8%8Bmysql%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrj000nkt8atatx1846/mac%E4%B8%8Bmysql%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</url>
       <content type="html"><![CDATA[<h2 id="1-数据库安装"><a href="#1-数据库安装" class="headerlink" title="1. 数据库安装"></a>1. 数据库安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">→ brew install mysql  </div><div class="line">→ brew info mysql</div><div class="line">// ?→ mysql_secure_installation</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="2-运行mysql"><a href="#2-运行mysql" class="headerlink" title="2. 运行mysql"></a>2. 运行mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// → brew services start mysql    // 可以在后台运行</div><div class="line">→ rm /private/tmp/mysql.sock.lock    </div><div class="line">→ mv /private/tmp/mysql.sock.lock ~/del-rm</div><div class="line">→ mysql.server start | stop | restart   //**...........</div></pre></td></tr></table></figure>
@@ -173,7 +173,7 @@
     
     <entry>
       <title><![CDATA[MySQL 管理]]></title>
-      <url>https://pifoo.github.io/ciyr5vj46000jox8avjzidn5x/MySQL-%E7%AE%A1%E7%90%86.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrh000jkt8ackvdyox2/MySQL-%E7%AE%A1%E7%90%86.html</url>
       <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 查看mysql进程</div><div class="line">ps -ef | grep mysqld</div><div class="line"># or</div><div class="line">top</div><div class="line"></div><div class="line"># 启动 / 重启 / 停止 mysql服务器</div><div class="line">sudo mysql.server start [restart | stop]</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="mysqladmin-命令"><a href="#mysqladmin-命令" class="headerlink" title="mysqladmin 命令"></a>mysqladmin 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">→ mysqladmin --help</div></pre></td></tr></table></figure>
@@ -184,7 +184,7 @@
     
     <entry>
       <title><![CDATA[ES6环境搭建(Node & Babel)]]></title>
-      <url>https://pifoo.github.io/ciyr5vj3s0006ox8a5wdrk722/ES6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Node-babel.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrb000bkt8ar4pkjkc8/ES6%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Node-babel.html</url>
       <content type="html"><![CDATA[<p>ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
 <a id="more"></a>
 <h2 id="一、ES6-参考"><a href="#一、ES6-参考" class="headerlink" title="一、ES6 参考"></a>一、ES6 参考</h2><ul>
@@ -315,7 +315,7 @@
     
     <entry>
       <title><![CDATA[图解Git]]></title>
-      <url>https://pifoo.github.io/ciyr5vj4d000uox8a8df6vop1/%E5%9B%BE%E8%A7%A3Git.html</url>
+      <url>https://pifoo.github.io/ciyr8mkro000wkt8agetj32b6/%E5%9B%BE%E8%A7%A3Git.html</url>
       <content type="html"><![CDATA[<h2 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1. 基本用法"></a>1. 基本用法</h2><h3 id="1-1-在工作目录、暂存目录-也叫做索引-和仓库之间复制文件"><a href="#1-1-在工作目录、暂存目录-也叫做索引-和仓库之间复制文件" class="headerlink" title="1.1  在工作目录、暂存目录(也叫做索引)和仓库之间复制文件"></a>1.1  在工作目录、暂存目录(也叫做索引)和仓库之间复制文件</h3><p><img src="http://upload-images.jianshu.io/upload_images/43373-70b0b4603139bc32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="在工作目录、暂存目录(也叫做索引)和仓库之间复制文件"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git add files                          // 把当前文件放入暂存区域</div><div class="line">git commit                             // 给暂存区域生成快照并提交</div><div class="line">git reset -- files                     // 用来撤销最后一次git add files，你也可以用git reset 撤销所有暂存区域文件</div><div class="line">git checkout -- files                  // 把文件从暂存区域复制到工作目录，用来丢弃本地修改。</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>可以用  git reset -p,  git checkout -p, or  git add -p 进入交互模式</p>
@@ -395,7 +395,7 @@ git会使用与当前提交相同的父节点进行一次新提交，旧的提�
     
     <entry>
       <title><![CDATA[Git 起步]]></title>
-      <url>https://pifoo.github.io/ciyr5vj3v0007ox8abq2cny0i/Git-%E8%B5%B7%E6%AD%A5.html</url>
+      <url>https://pifoo.github.io/ciyr8mkr70007kt8angmp2esy/Git-%E8%B5%B7%E6%AD%A5.html</url>
       <content type="html"><![CDATA[<h2 id="认识Git"><a href="#认识Git" class="headerlink" title="认识Git"></a>认识Git</h2><table>
 <thead>
 <tr>
@@ -435,7 +435,7 @@ git会使用与当前提交相同的父节点进行一次新提交，旧的提�
     
     <entry>
       <title><![CDATA[Laravel 5.x 环境配置]]></title>
-      <url>https://pifoo.github.io/ciyr5vj43000dox8afc49qo96/Laravel-5-x-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrf000dkt8ac3q7s50n/Laravel-5-x-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</url>
       <content type="html"><![CDATA[<h2 id="Laravel-环境配置-启动服务的4种方式"><a href="#Laravel-环境配置-启动服务的4种方式" class="headerlink" title="Laravel 环境配置,启动服务的4种方式"></a>Laravel 环境配置,启动服务的4种方式</h2><blockquote>
 <ol>
 <li>php内置服务器: php -S localhost:8999 -t public</li>
@@ -462,7 +462,7 @@ git会使用与当前提交相同的父节点进行一次新提交，旧的提�
     
     <entry>
       <title><![CDATA[浅显易懂的Git教程]]></title>
-      <url>https://pifoo.github.io/ciyr5vj4e000wox8a4bw8k73f/%E6%B5%85%E6%98%BE%E6%98%93%E6%87%82%E7%9A%84Git%E6%95%99%E7%A8%8B.html</url>
+      <url>https://pifoo.github.io/ciyr8mkrn000ukt8akyyzqeiq/%E6%B5%85%E6%98%BE%E6%98%93%E6%87%82%E7%9A%84Git%E6%95%99%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<h2 id="1-认识Git"><a href="#1-认识Git" class="headerlink" title="1. 认识Git"></a>1. 认识Git</h2><p>一个分布式的版本控制系统</p>
 <a id="more"></a>
 <h2 id="2-仓库初始化"><a href="#2-仓库初始化" class="headerlink" title="2. 仓库初始化"></a>2. 仓库初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 1. 工程目录</div><div class="line">➜  GitAction:  pwd</div><div class="line">/Users/.../GitAction</div><div class="line"></div><div class="line">// 2. 创建新仓库</div><div class="line">➜  GitAction: git init                                           // 初始化仓库(本地)</div><div class="line"></div><div class="line">// 2. 检出仓库</div><div class="line">➜  GitAction: git clone  pathURL/to/repository  [fileName]       // 创建一个仓库的克隆版本(远程or本地)</div></pre></td></tr></table></figure>
@@ -493,7 +493,7 @@ git会使用与当前提交相同的父节点进行一次新提交，旧的提�
     
     <entry>
       <title><![CDATA[Git 基础]]></title>
-      <url>https://pifoo.github.io/ciyr5vj3z000box8au1yji0cs/Git-%E5%9F%BA%E7%A1%80.html</url>
+      <url>https://pifoo.github.io/ciyr8mkr50006kt8a995v5dly/Git-%E5%9F%BA%E7%A1%80.html</url>
       <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">$ git init    // 在现在目录下初始化仓库</div><div class="line"></div><div class="line">$ git add *.c    // 提交变更到暂存区（开始跟踪文件） , 理解为：添加内容到下一次提交中</div><div class="line"></div><div class="line">$ git add LICENSE</div><div class="line"></div><div class="line">$ git commit -m &apos;initial project version&apos;   // 提交至仓库</div><div class="line"></div><div class="line">$ git clone https://github.com/libgit2/libgit2 mylibgit   // clone现在有仓库并重命名</div><div class="line"></div><div class="line">$ git status   // 查看文件 状态</div><div class="line"></div><div class="line">$ git status -s // 状态简览</div><div class="line"></div><div class="line">$ git diff  // 显示尚未暂存的改动(查看已暂存 和 暂存的修改) ，比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容</div><div class="line"></div><div class="line">$ git diff --staged    // 查看已暂存的将要添加到下次提交里的内容</div><div class="line"></div><div class="line">$ git commit -a -m &apos;added new benchmarks&apos;   // 跳过使用暂存区域的方式(跳过 git add)</div><div class="line"></div><div class="line">$ git rm  // 从暂存区域移除然后提交,并连带从工作目录中删除指定的文件, 如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f（译注：即 force 的首字母）</div><div class="line"></div><div class="line">$ git rm --cached README  // Git 不再继续跟踪（文件仍保留在工作目录中）</div><div class="line"></div><div class="line">$ git rm log/\*.log   // 模式匹配，删除 log/目录下扩展名为 .log的所有文件</div><div class="line"></div><div class="line">$ git mv CONTRIBUTING.md   con.md   // 移动/重命名(同目录下)</div></pre></td></tr></table></figure>
 <p><img src="http://upload-images.jianshu.io/upload_images/43373-00532394bb05f3dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="状态简览"></p>
 <p>忽略文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 创建一个名为.gitignore的文件，列出要忽略的文件模式</div><div class="line">$ touch  .gitignore</div></pre></td></tr></table></figure></p>
