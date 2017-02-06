@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="CSS3盒模型设计and响应式布局"/>
+
+
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/2012/01/13/CSS3盒模型设计and响应式布局.html"/>
+
+
+<meta name="description" content="弹性盒模型123456789101112131415161718192021222324注意在使用弹性盒模型的时候 父元素必须要加    display:box 或 display:inline-boxBox-orient 定义盒模型的布局方向    Horizontal 水平显示    vertical 垂直方向box-direction 元素排列顺序    Normal 正序    Rever">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3盒模型设计and响应式布局">
+<meta property="og:url" content="https://pifoo.github.io/2012/01/13/CSS3盒模型设计and响应式布局.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="弹性盒模型123456789101112131415161718192021222324注意在使用弹性盒模型的时候 父元素必须要加    display:box 或 display:inline-boxBox-orient 定义盒模型的布局方向    Horizontal 水平显示    vertical 垂直方向box-direction 元素排列顺序    Normal 正序    Rever">
+<meta property="og:updated_time" content="2017-02-06T02:54:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3盒模型设计and响应式布局">
+<meta name="twitter:description" content="弹性盒模型123456789101112131415161718192021222324注意在使用弹性盒模型的时候 父元素必须要加    display:box 或 display:inline-boxBox-orient 定义盒模型的布局方向    Horizontal 水平显示    vertical 垂直方向box-direction 元素排列顺序    Normal 正序    Rever">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e5e36004b48117487ce89e13dc82a734";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+    <title> CSS3盒模型设计and响应式布局 · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories/">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags/">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          CSS3盒模型设计and响应式布局
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 13, 2012
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#弹性盒模型"><span class="toc-text">弹性盒模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒模型阴影"><span class="toc-text">盒模型阴影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#color-其他盒模型新增属性"><span class="toc-text">color 其他盒模型新增属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Css3分栏布局"><span class="toc-text">Css3分栏布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Css3响应式布局"><span class="toc-text">Css3响应式布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#移动端meta"><span class="toc-text">移动端meta</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <h1 id="弹性盒模型"><a href="#弹性盒模型" class="headerlink" title="弹性盒模型"></a>弹性盒模型</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">注意在使用弹性盒模型的时候 父元素必须要加</div><div class="line">    display:box 或 display:inline-box</div><div class="line"></div><div class="line">Box-orient 定义盒模型的布局方向</div><div class="line">    Horizontal 水平显示</div><div class="line">    vertical 垂直方向</div><div class="line">box-direction 元素排列顺序</div><div class="line">    Normal 正序</div><div class="line">    Reverse 反序</div><div class="line">box-ordinal-group 设置元素的具体位置</div><div class="line"></div><div class="line">Box-flex 定义盒子的弹性空间</div><div class="line">    子元素的尺寸=盒子的尺寸*子元素的box-flex属性值 / 所有子元素的box-flex属性值的和</div><div class="line"></div><div class="line">box-pack 对盒子富裕的空间进行管理</div><div class="line">    Start 所有子元素在盒子左侧显示，富裕空间在右侧</div><div class="line">    End 所有子元素在盒子右侧显示，富裕空间在左侧</div><div class="line">    Center 所有子元素居中</div><div class="line">    Justify 富余空间在子元素之间平均分布</div><div class="line"></div><div class="line">box-align 在垂直方向上对元素的位置进行管理</div><div class="line">    Start 所有子元素在据顶</div><div class="line">    End 所有子元素在据底</div><div class="line">    Center 所有子元素居中</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="盒模型阴影"><a href="#盒模型阴影" class="headerlink" title="盒模型阴影"></a>盒模型阴影</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">用法</div><div class="line">    <span class="selector-tag">box-shadow</span>:<span class="selector-attr">[inset]</span> <span class="selector-tag">x</span> <span class="selector-tag">y</span> <span class="selector-tag">blur</span> <span class="selector-attr">[spread]</span> <span class="selector-tag">color</span></div><div class="line">参数</div><div class="line">    <span class="selector-tag">inset</span>：投影方式</div><div class="line">        <span class="selector-tag">inset</span>：内投影</div><div class="line">        不给：外投影</div><div class="line">    <span class="selector-tag">x</span>、<span class="selector-tag">y</span>：阴影偏移</div><div class="line">    <span class="selector-tag">blur</span>：模糊半径</div><div class="line">    <span class="selector-tag">spread</span>：扩展阴影半径</div><div class="line">        先扩展原有形状，再开始画阴影</div><div class="line">    <span class="selector-tag">color</span></div></pre></td></tr></table></figure>
+<h1 id="color-其他盒模型新增属性"><a href="#color-其他盒模型新增属性" class="headerlink" title="color 其他盒模型新增属性"></a><em>color</em> 其他盒模型新增属性</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">box-reflect 倒影</div><div class="line">    direction  方向     above|below|left|right;</div><div class="line">    距离</div><div class="line">    渐变（可选）</div><div class="line"></div><div class="line">resize 自由缩放</div><div class="line">    Both 水平垂直都可以缩放</div><div class="line">    Horizontal 只有水平方向可以缩放</div><div class="line">    Vertical 只有垂直方向可以缩放</div><div class="line">    注意：一定要配合overflow:auto 一块使用只有水平方向可以缩放</div><div class="line"></div><div class="line">box-sizing 盒模型解析模式</div><div class="line">    Content-box  标准盒模型</div><div class="line">        width/height=border+padding+content</div><div class="line">    Border-box 怪异盒模型</div><div class="line">        width/height=content</div></pre></td></tr></table></figure>
+<h1 id="Css3分栏布局"><a href="#Css3分栏布局" class="headerlink" title="Css3分栏布局"></a>Css3分栏布局</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">column-width</span> 栏目宽度</div><div class="line"><span class="selector-tag">column-count</span> 栏目列数</div><div class="line"><span class="selector-tag">column-gap</span>   栏目距离</div><div class="line"><span class="selector-tag">column-rule</span>  栏目间隔线</div></pre></td></tr></table></figure>
+<h1 id="Css3响应式布局"><a href="#Css3响应式布局" class="headerlink" title="Css3响应式布局"></a>Css3响应式布局</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">媒体类型</div><div class="line">    all 所有媒体</div><div class="line">    braille 盲文触觉设备</div><div class="line">    embossed 盲文打印机</div><div class="line">    print 手持设备</div><div class="line">    projection 打印预览</div><div class="line">    screen 彩屏设备</div><div class="line">    speech '听觉'类似的媒体类型</div><div class="line">    tty 不适用像素的设备</div><div class="line">    tv  电视</div><div class="line"></div><div class="line">关键字</div><div class="line">    and</div><div class="line">    not      not关键字是用来排除某种制定的媒体类型</div><div class="line">    only     only用来定某种特定的媒体类型</div><div class="line"></div><div class="line">媒体特性</div><div class="line">    (max-width:600px)</div><div class="line">    (max-device-width: 480px)  设备输出宽度</div><div class="line">    (orientation:portrait)  竖屏</div><div class="line">    (orientation:landscape)	横屏</div><div class="line">    (-webkit-min-device-pixel-ratio: 2) 像素比</div><div class="line">        devicePixelRatio 设备像素比 window.devicePixelRatio = 物理像素 / dips</div><div class="line"></div><div class="line"></div><div class="line">样式引入                                                                                                                                        样式引入</div><div class="line">    &lt;link rel="stylesheet" type="text/css" href="../css/print.css" media="print" /&gt;</div><div class="line">    @import url("css/reset.css") screen;</div><div class="line">    @media screen&#123;</div><div class="line">        选择器&#123;</div><div class="line">            属性：属性值；</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    &lt;link rel=”stylesheet” media=”all and (orientation:portrait)” href=”portrait.css”&gt;</div><div class="line">    &lt;link rel=”stylesheet” media=”all and (orientation:landscape)”href=”landscape.css”&gt;</div><div class="line">    @media screen and (min-width:400px) and (max-width:500px) &#123;.box &#123;margin: 0 auto;&#125;&#125;</div><div class="line">    &lt;link rel="stylesheet" type="text/css" href="styleA.css"  media="screen and (min-width: 800px)"&gt;</div><div class="line">    &lt;link rel="stylesheet" type="text/css" href="styleB.css" media="screen and (min-width: 600px) and (max-width: 800px)"&gt;</div><div class="line">    &lt;link rel="stylesheet" type="text/css" href="styleC.css"    media="screen and (max-width: 600px)"&gt;</div></pre></td></tr></table></figure>
+<h1 id="移动端meta"><a href="#移动端meta" class="headerlink" title="移动端meta"></a>移动端meta</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="viewport" content=""</div><div class="line">width [pixel_value | device-height]</div><div class="line">height [pixel_value | device-height]</div><div class="line">user-scalable 是否允许缩放 （no||yes）</div><div class="line">initial-scale 初始比例</div><div class="line">minimum-scale 允许缩放的最小比例</div><div class="line">maximum-scale 允许缩放的最大比例</div><div class="line">target-densitydpi [dpi_value | device-dpi | high-dpi | medium-dpi | low-dpi]   /&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/">CSS3</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2012/01/15/CSS3-Transition过渡和transform2d变换.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">CSS3-Transition过渡和transform2d变换</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2012/01/12/CSS3-UI样式.html">
+        <span class="next-text nav-default">CSS3-UI样式</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://pifoo.github.io/2012/01/13/CSS3盒模型设计and响应式布局.html';
+        this.page.identifier = '2012/01/13/CSS3盒模型设计and响应式布局.html';
+        this.page.title = 'CSS3盒模型设计and响应式布局';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//pifoo-github-io.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>

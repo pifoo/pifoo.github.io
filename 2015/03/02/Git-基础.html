@@ -40,7 +40,7 @@
 <meta property="og:site_name" content="Pifoo">
 <meta property="og:description" content="123456789101112131415161718192021222324252627$ git init    // 在现在目录下初始化仓库$ git add *.c    // 提交变更到暂存区（开始跟踪文件） , 理解为：添加内容到下一次提交中$ git add LICENSE$ git commit -m &amp;apos;initial project version&amp;apos;   //">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/43373-00532394bb05f3dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-04T08:20:10.000Z">
+<meta property="og:updated_time" content="2017-02-06T02:55:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 基础">
 <meta name="twitter:description" content="123456789101112131415161718192021222324252627$ git init    // 在现在目录下初始化仓库$ git add *.c    // 提交变更到暂存区（开始跟踪文件） , 理解为：添加内容到下一次提交中$ git add LICENSE$ git commit -m &amp;apos;initial project version&amp;apos;   //">
@@ -179,6 +179,7 @@
     <div class="post-content">
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">$ git init    // 在现在目录下初始化仓库</div><div class="line"></div><div class="line">$ git add *.c    // 提交变更到暂存区（开始跟踪文件） , 理解为：添加内容到下一次提交中</div><div class="line"></div><div class="line">$ git add LICENSE</div><div class="line"></div><div class="line">$ git commit -m &apos;initial project version&apos;   // 提交至仓库</div><div class="line"></div><div class="line">$ git clone https://github.com/libgit2/libgit2 mylibgit   // clone现在有仓库并重命名</div><div class="line"></div><div class="line">$ git status   // 查看文件 状态</div><div class="line"></div><div class="line">$ git status -s // 状态简览</div><div class="line"></div><div class="line">$ git diff  // 显示尚未暂存的改动(查看已暂存 和 暂存的修改) ，比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容</div><div class="line"></div><div class="line">$ git diff --staged    // 查看已暂存的将要添加到下次提交里的内容</div><div class="line"></div><div class="line">$ git commit -a -m &apos;added new benchmarks&apos;   // 跳过使用暂存区域的方式(跳过 git add)</div><div class="line"></div><div class="line">$ git rm  // 从暂存区域移除然后提交,并连带从工作目录中删除指定的文件, 如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f（译注：即 force 的首字母）</div><div class="line"></div><div class="line">$ git rm --cached README  // Git 不再继续跟踪（文件仍保留在工作目录中）</div><div class="line"></div><div class="line">$ git rm log/\*.log   // 模式匹配，删除 log/目录下扩展名为 .log的所有文件</div><div class="line"></div><div class="line">$ git mv CONTRIBUTING.md   con.md   // 移动/重命名(同目录下)</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><img src="http://upload-images.jianshu.io/upload_images/43373-00532394bb05f3dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="状态简览"></p>
 <p>忽略文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 创建一个名为.gitignore的文件，列出要忽略的文件模式</div><div class="line">$ touch  .gitignore</div></pre></td></tr></table></figure></p>
 <blockquote>
@@ -210,8 +211,8 @@
       </a>
     
     
-      <a class="next" href="/2012/02/06/CSS3选择器.html">
-        <span class="next-text nav-default">CSS3选择器</span>
+      <a class="next" href="/2012/01/15/CSS3-Transition过渡和transform2d变换.html">
+        <span class="next-text nav-default">CSS3-Transition过渡和transform2d变换</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

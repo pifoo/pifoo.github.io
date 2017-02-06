@@ -257,16 +257,11 @@
     <div class="post-content">
       
         
+          
+        
 
         
-          <h2 id="Laravel-环境配置-启动服务的4种方式"><a href="#Laravel-环境配置-启动服务的4种方式" class="headerlink" title="Laravel 环境配置,启动服务的4种方式"></a>Laravel 环境配置,启动服务的4种方式</h2><blockquote>
-<ol>
-<li>php内置服务器: php -S localhost:8999 -t public</li>
-<li>→ php artisan serve    </li>
-<li>使用Homestead  </li>
-<li>使用valet *    #本文采用此方式</li>
-</ol>
-</blockquote>
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">$ git init    // 在现在目录下初始化仓库</div><div class="line"></div><div class="line">$ git add *.c    // 提交变更到暂存区（开始跟踪文件） , 理解为：添加内容到下一次提交中</div><div class="line"></div><div class="line">$ git add LICENSE</div><div class="line"></div><div class="line">$ git commit -m &apos;initial project version&apos;   // 提交至仓库</div><div class="line"></div><div class="line">$ git clone https://github.com/libgit2/libgit2 mylibgit   // clone现在有仓库并重命名</div><div class="line"></div><div class="line">$ git status   // 查看文件 状态</div><div class="line"></div><div class="line">$ git status -s // 状态简览</div><div class="line"></div><div class="line">$ git diff  // 显示尚未暂存的改动(查看已暂存 和 暂存的修改) ，比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容</div><div class="line"></div><div class="line">$ git diff --staged    // 查看已暂存的将要添加到下次提交里的内容</div><div class="line"></div><div class="line">$ git commit -a -m &apos;added new benchmarks&apos;   // 跳过使用暂存区域的方式(跳过 git add)</div><div class="line"></div><div class="line">$ git rm  // 从暂存区域移除然后提交,并连带从工作目录中删除指定的文件, 如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f（译注：即 force 的首字母）</div><div class="line"></div><div class="line">$ git rm --cached README  // Git 不再继续跟踪（文件仍保留在工作目录中）</div><div class="line"></div><div class="line">$ git rm log/\*.log   // 模式匹配，删除 log/目录下扩展名为 .log的所有文件</div><div class="line"></div><div class="line">$ git mv CONTRIBUTING.md   con.md   // 移动/重命名(同目录下)</div></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/2015/03/02/Git-基础.html" class="read-more-link">Read more..</a>
           </div>
@@ -283,13 +278,13 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2012/02/06/CSS3选择器.html">CSS3选择器</a>
+          <a class="post-link" href="/2012/01/15/CSS3-Transition过渡和transform2d变换.html">CSS3-Transition过渡和transform2d变换</a>
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Feb 6, 2012
+          Jan 15, 2012
         </span>
       </div>
     </header>
@@ -299,18 +294,161 @@
     <div class="post-content">
       
         
+          
+        
 
         
-          <h2 id="Laravel-环境配置-启动服务的4种方式"><a href="#Laravel-环境配置-启动服务的4种方式" class="headerlink" title="Laravel 环境配置,启动服务的4种方式"></a>Laravel 环境配置,启动服务的4种方式</h2><blockquote>
-<ol>
-<li>php内置服务器: php -S localhost:8999 -t public</li>
-<li>→ php artisan serve    </li>
-<li>使用Homestead  </li>
-<li>使用valet *    #本文采用此方式</li>
-</ol>
-</blockquote>
+          <h1 id="Transition过渡"><a href="#Transition过渡" class="headerlink" title="Transition过渡"></a>Transition过渡</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Transition过渡</div><div class="line">transition-property  要运动的样式  （all || [attr] || none）</div><div class="line">transition-duration 运动时间</div><div class="line">transition-delay 延迟时间</div><div class="line">transition-timing-function 运动形式</div><div class="line">    ease：（逐渐变慢）默认值</div><div class="line">    linear：（匀速）</div><div class="line">    ease-in：(加速)</div><div class="line">    ease-out：（减速）</div><div class="line">    ease-in-out：（先加速后减速）</div><div class="line">    cubic-bezier 贝塞尔曲线（ x1, y1, x2, y2 ）</div><div class="line">        http://matthewlein.com/ceaser/</div><div class="line">过渡完成事件</div><div class="line">    Webkit内核：</div><div class="line">        obj.addEventListener('webkitTransitionEnd',function()&#123;&#125;,false);</div><div class="line">    firefox:</div><div class="line">        obj.addEventListener('transitionend',function()&#123;&#125;,false);</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2012/02/06/CSS3选择器.html" class="read-more-link">Read more..</a>
+            <a href="/2012/01/15/CSS3-Transition过渡和transform2d变换.html" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2012/01/13/CSS3盒模型设计and响应式布局.html">CSS3盒模型设计and响应式布局</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 13, 2012
+        </span>
+      </div>
+    </header>
+
+    
+
+    <div class="post-content">
+      
+        
+          
+        
+
+        
+          <h1 id="弹性盒模型"><a href="#弹性盒模型" class="headerlink" title="弹性盒模型"></a>弹性盒模型</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">注意在使用弹性盒模型的时候 父元素必须要加</div><div class="line">    display:box 或 display:inline-box</div><div class="line"></div><div class="line">Box-orient 定义盒模型的布局方向</div><div class="line">    Horizontal 水平显示</div><div class="line">    vertical 垂直方向</div><div class="line">box-direction 元素排列顺序</div><div class="line">    Normal 正序</div><div class="line">    Reverse 反序</div><div class="line">box-ordinal-group 设置元素的具体位置</div><div class="line"></div><div class="line">Box-flex 定义盒子的弹性空间</div><div class="line">    子元素的尺寸=盒子的尺寸*子元素的box-flex属性值 / 所有子元素的box-flex属性值的和</div><div class="line"></div><div class="line">box-pack 对盒子富裕的空间进行管理</div><div class="line">    Start 所有子元素在盒子左侧显示，富裕空间在右侧</div><div class="line">    End 所有子元素在盒子右侧显示，富裕空间在左侧</div><div class="line">    Center 所有子元素居中</div><div class="line">    Justify 富余空间在子元素之间平均分布</div><div class="line"></div><div class="line">box-align 在垂直方向上对元素的位置进行管理</div><div class="line">    Start 所有子元素在据顶</div><div class="line">    End 所有子元素在据底</div><div class="line">    Center 所有子元素居中</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2012/01/13/CSS3盒模型设计and响应式布局.html" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2012/01/12/CSS3-UI样式.html">CSS3-UI样式</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 12, 2012
+        </span>
+      </div>
+    </header>
+
+    
+
+    <div class="post-content">
+      
+        
+          
+        
+
+        
+          <h1 id="圆角"><a href="#圆角" class="headerlink" title="圆角"></a>圆角</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">border-radius: 1-4个数字 / 1-4个数字</div><div class="line">           前面是水平(x轴)，后面是垂直(y轴)</div><div class="line">           不给“/”则水平和垂直一样</div><div class="line">               border-radius: 10px/5px;</div><div class="line">        参数</div><div class="line">            各种长度单位都可以：px，%，…</div><div class="line">            %有时很方便</div><div class="line">                但宽高不一致时不太好</div><div class="line">        用法</div><div class="line">            1个：都一样</div><div class="line">                border-radius: 一样</div><div class="line">            2个：对角</div><div class="line">                border-radius: 左上&amp;右下    右上&amp;左下</div><div class="line">            3个：斜对角</div><div class="line">                border-radius: 左上    右上&amp;左下    右下</div><div class="line">            4个：全部，顺时针</div><div class="line">                border-radius: 左上    右上    右下    左下</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2012/01/12/CSS3-UI样式.html" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2012/01/07/CSS3文本样式.html">CSS3文本样式</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 7, 2012
+        </span>
+      </div>
+    </header>
+
+    
+
+    <div class="post-content">
+      
+        
+          
+        
+
+        
+          <h1 id="新增颜色模式"><a href="#新增颜色模式" class="headerlink" title="新增颜色模式"></a>新增颜色模式</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">rgba</span></div><div class="line"><span class="selector-tag">r</span>	   <span class="selector-tag">Red</span>      红		0<span class="selector-tag">-255</span></div><div class="line"><span class="selector-tag">g</span>	   <span class="selector-tag">Green</span>    绿		0<span class="selector-tag">-255</span></div><div class="line"><span class="selector-tag">b</span>	   <span class="selector-tag">Blue</span>     蓝		0<span class="selector-tag">-255</span></div><div class="line"><span class="selector-tag">a</span>	   <span class="selector-tag">Alpha</span>    透明         0<span class="selector-tag">-1</span></div><div class="line">问题：注意边框颜色透明有问题</div><div class="line"></div><div class="line"><span class="selector-tag">Hsl</span></div><div class="line"><span class="selector-tag">H</span>          <span class="selector-tag">Hue</span>		     色调		       任意数值</div><div class="line"><span class="selector-tag">S</span>       <span class="selector-tag">saturation</span>          饱和度                      0%<span class="selector-tag">-100</span>%</div><div class="line"><span class="selector-tag">L</span>        <span class="selector-tag">Lightness</span>	     亮度		       0%<span class="selector-tag">-100</span>%</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2012/01/07/CSS3文本样式.html" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2012/01/05/CSS3选择器.html">CSS3选择器</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 5, 2012
+        </span>
+      </div>
+    </header>
+
+    
+
+    <div class="post-content">
+      
+        
+          
+        
+
+        
+          <h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">E[attr]只使用属性名，但没有确定任何属性值</div><div class="line">E[attr=&quot;value&quot;]指定属性名，并指定了该属性的属性值</div><div class="line">E[attr~=&quot;value&quot;]指定属性名，并且具有属性值，此属性值是一个词列表，并且以空格隔开，其中词列表中包含了一个value词，而且等号前面的“〜”不能不写</div><div class="line">E[attr^=&quot;value&quot;]指定了属性名，并且有属性值，属性值是以value开头的</div><div class="line"></div><div class="line">E[attr$=&quot;value&quot;]指定了属性名，并且有属性值，而且属性值是以value结束的</div><div class="line">E[attr*=&quot;value&quot;]指定了属性名，并且有属性值，而且属值中包含了value</div><div class="line">E[attr|=&quot;value&quot;]指定了属性名，并且属性值是value或者以“value-”开头的值（比如说zh-cn）</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2012/01/05/CSS3选择器.html" class="read-more-link">Read more..</a>
           </div>
         
       

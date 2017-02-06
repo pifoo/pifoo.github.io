@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="CSS3-Transition过渡和transform2d变换"/>
+
+
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/2012/01/15/CSS3-Transition过渡和transform2d变换.html"/>
+
+
+<meta name="description" content="Transition过渡1234567891011121314151617Transition过渡transition-property  要运动的样式  （all || [attr] || none）transition-duration 运动时间transition-delay 延迟时间transition-timing-function 运动形式    ease：（逐渐变慢）默认值    l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3-Transition过渡和transform2d变换">
+<meta property="og:url" content="https://pifoo.github.io/2012/01/15/CSS3-Transition过渡和transform2d变换.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="Transition过渡1234567891011121314151617Transition过渡transition-property  要运动的样式  （all || [attr] || none）transition-duration 运动时间transition-delay 延迟时间transition-timing-function 运动形式    ease：（逐渐变慢）默认值    l">
+<meta property="og:updated_time" content="2017-02-06T03:23:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3-Transition过渡和transform2d变换">
+<meta name="twitter:description" content="Transition过渡1234567891011121314151617Transition过渡transition-property  要运动的样式  （all || [attr] || none）transition-duration 运动时间transition-delay 延迟时间transition-timing-function 运动形式    ease：（逐渐变慢）默认值    l">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e5e36004b48117487ce89e13dc82a734";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+    <title> CSS3-Transition过渡和transform2d变换 · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories/">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags/">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          CSS3-Transition过渡和transform2d变换
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 15, 2012
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Transition过渡"><span class="toc-text">Transition过渡</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#transform-2D变换"><span class="toc-text">transform 2D变换</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <h1 id="Transition过渡"><a href="#Transition过渡" class="headerlink" title="Transition过渡"></a>Transition过渡</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Transition过渡</div><div class="line">transition-property  要运动的样式  （all || [attr] || none）</div><div class="line">transition-duration 运动时间</div><div class="line">transition-delay 延迟时间</div><div class="line">transition-timing-function 运动形式</div><div class="line">    ease：（逐渐变慢）默认值</div><div class="line">    linear：（匀速）</div><div class="line">    ease-in：(加速)</div><div class="line">    ease-out：（减速）</div><div class="line">    ease-in-out：（先加速后减速）</div><div class="line">    cubic-bezier 贝塞尔曲线（ x1, y1, x2, y2 ）</div><div class="line">        http://matthewlein.com/ceaser/</div><div class="line">过渡完成事件</div><div class="line">    Webkit内核：</div><div class="line">        obj.addEventListener('webkitTransitionEnd',function()&#123;&#125;,false);</div><div class="line">    firefox:</div><div class="line">        obj.addEventListener('transitionend',function()&#123;&#125;,false);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="transform-2D变换"><a href="#transform-2D变换" class="headerlink" title="transform 2D变换"></a>transform 2D变换</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">transform</div><div class="line">    rotate()  旋转函数 取值度数</div><div class="line">        deg  度数</div><div class="line">        Transform-origin 旋转的基点</div><div class="line">    skew() 倾斜函数 取值度数</div><div class="line">        skewX()</div><div class="line">        skewY()</div><div class="line">    scale() 缩放函数 取值 正数、负数和小数</div><div class="line">        scaleX()</div><div class="line">        scaleY()</div><div class="line">    translate() 位移函数</div><div class="line">        translateX()</div><div class="line">        translateY()</div><div class="line">    Transform 执行顺序问题 — 后写先执行</div><div class="line"></div><div class="line">    matrix(a,b,c,d,e,f) 矩阵函数</div><div class="line">        通过矩阵实现缩放</div><div class="line">            x轴缩放 a=x*a    c=x*c     e=x*e;</div><div class="line">            y轴缩放 b=y*b   d=y*d     f=y*f;</div><div class="line">        通过矩阵实现位移</div><div class="line">            x轴位移: e=e+x</div><div class="line">            y轴位移: f=f+y</div><div class="line">        通过矩阵实现倾斜</div><div class="line">            x轴倾斜: c=Math.tan(xDeg/180*Math.PI)</div><div class="line">            y轴倾斜: b=Math.tan(yDeg/180*Math.PI)</div><div class="line">        通过矩阵实现旋转</div><div class="line">            a=Math.cos(deg/180*Math.PI);</div><div class="line">            b=Math.sin(deg/180*Math.PI);</div><div class="line">            c=-Math.sin(deg/180*Math.PI);</div><div class="line">            d=Math.cos(deg/180*Math.PI);</div><div class="line"></div><div class="line">    变换兼容IE9以下IE版本只能通过矩阵来实现</div><div class="line">        filter:</div><div class="line">            progid:DXImageTransform.Microsoft.Matrix( M11= 1, M12= 0, M21= 0 , M22=1,SizingMethod='auto expand');</div><div class="line">        IE下的矩阵没有E和F两个参数 M11==a; M12==c; M21==b; M22==d</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/">CSS3</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2015/03/02/Git-基础.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Git 基础</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2012/01/13/CSS3盒模型设计and响应式布局.html">
+        <span class="next-text nav-default">CSS3盒模型设计and响应式布局</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://pifoo.github.io/2012/01/15/CSS3-Transition过渡和transform2d变换.html';
+        this.page.identifier = '2012/01/15/CSS3-Transition过渡和transform2d变换.html';
+        this.page.title = 'CSS3-Transition过渡和transform2d变换';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//pifoo-github-io.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>
