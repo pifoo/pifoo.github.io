@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="CSS3-3d变换和动画"/>
+
+
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/2012/01/20/CSS3-3d变换和动画.html"/>
+
+
+<meta name="description" content="3d变换123456789transform-style（preserve-3d） 建立3D空间Perspective 景深Perspective- origin 景深基点Transform 新增函数    rotateX()    rotateY()    rotateZ()    translateZ()    scaleZ()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3-3d变换和动画">
+<meta property="og:url" content="https://pifoo.github.io/2012/01/20/CSS3-3d变换和动画.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="3d变换123456789transform-style（preserve-3d） 建立3D空间Perspective 景深Perspective- origin 景深基点Transform 新增函数    rotateX()    rotateY()    rotateZ()    translateZ()    scaleZ()">
+<meta property="og:updated_time" content="2017-02-06T06:13:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3-3d变换和动画">
+<meta name="twitter:description" content="3d变换123456789transform-style（preserve-3d） 建立3D空间Perspective 景深Perspective- origin 景深基点Transform 新增函数    rotateX()    rotateY()    rotateZ()    translateZ()    scaleZ()">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e5e36004b48117487ce89e13dc82a734";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+    <title> CSS3-3d变换和动画 · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories/">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags/">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          CSS3-3d变换和动画
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Jan 20, 2012
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#3d变换"><span class="toc-text">3d变换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#animation"><span class="toc-text">animation</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <h1 id="3d变换"><a href="#3d变换" class="headerlink" title="3d变换"></a>3d变换</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform-style</span>（<span class="selector-tag">preserve-3d</span>） 建立3<span class="selector-tag">D</span>空间</div><div class="line"><span class="selector-tag">Perspective</span> 景深</div><div class="line"><span class="selector-tag">Perspective-</span> <span class="selector-tag">origin</span> 景深基点</div><div class="line"><span class="selector-tag">Transform</span> 新增函数</div><div class="line">    <span class="selector-tag">rotateX</span>()</div><div class="line">    <span class="selector-tag">rotateY</span>()</div><div class="line">    <span class="selector-tag">rotateZ</span>()</div><div class="line">    <span class="selector-tag">translateZ</span>()</div><div class="line">    <span class="selector-tag">scaleZ</span>()</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">关键帧——keyFrames</div><div class="line">    类似于flash</div><div class="line">        只需指明两个状态，之间的过程由计算机自动计算</div><div class="line">    关键帧的时间单位</div><div class="line">        数字：0%、25%、100%等</div><div class="line">        字符：from(0%)、to(100%)</div><div class="line">    格式</div><div class="line">        @keyframes 动画名称</div><div class="line">        &#123;</div><div class="line">        动画状态</div><div class="line">        &#125;</div><div class="line">    格式(2)</div><div class="line">        @keyframes  _test</div><div class="line">        &#123;</div><div class="line">            from &#123; background:red; &#125;</div><div class="line">            to &#123; background:green; &#125;</div><div class="line">        &#125;</div><div class="line">        可以只有to</div><div class="line"></div><div class="line">animate——调用动画</div><div class="line">    调用的标签(#div1、xxx:hover之类的)</div><div class="line">        必要属性</div><div class="line">            animation-name		动画名称（关键帧名称）</div><div class="line">            animation-duration		动画持续时间</div><div class="line">    例如：</div><div class="line">        -webkit-animation-name: '_test';</div><div class="line">        -webkit-animation-duration: 4s;</div><div class="line">    例子：进度条</div><div class="line">        animation-play-state 播放状态（ running 播放 和paused 暂停 ）</div><div class="line"></div><div class="line">animate——可选属性</div><div class="line">    animation-timing-function	动画运动形式</div><div class="line">        linear	    匀速。</div><div class="line">        ease		缓冲。</div><div class="line">        ease-in	    由慢到快。</div><div class="line">        ease-out	由快到慢。</div><div class="line">        ease-in-out	由慢到快再到慢。</div><div class="line">        cubic-bezier(number, number, number, number)：	特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内</div><div class="line">    animation-delay			动画延迟</div><div class="line">        只是第一次</div><div class="line">    animation-iteration-count		重复次数</div><div class="line">        infinite为无限次</div><div class="line">    animation-direction			播放前重置</div><div class="line">        动画是否重置后再开始播放</div><div class="line">        alternate	动画直接从上一次停止的位置开始执行</div><div class="line">        normal	动画第二次直接跳到0%的状态开始执行</div><div class="line"></div><div class="line">animate——和JS结合</div><div class="line">    通过class</div><div class="line">        在class里加入animation的各种属性</div><div class="line">        直接给元素加-webkit-animation-xxx样式</div><div class="line">    animation的问题</div><div class="line">        写起来麻烦</div><div class="line">        没法动态改变目标点位置</div><div class="line">    obj.addEventListener('webkitAnimationEnd', function ()&#123;&#125;, false);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/">CSS3</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2015/03/02/Git-基础.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Git 基础</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2012/01/15/CSS3-Transition过渡和transform2d变换.html">
+        <span class="next-text nav-default">CSS3-Transition过渡和transform2d变换</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://pifoo.github.io/2012/01/20/CSS3-3d变换和动画.html';
+        this.page.identifier = '2012/01/20/CSS3-3d变换和动画.html';
+        this.page.title = 'CSS3-3d变换和动画';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//pifoo-github-io.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>
