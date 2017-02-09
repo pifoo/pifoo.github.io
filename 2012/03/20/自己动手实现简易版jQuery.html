@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="自己动手实现简易版jQuery"/>
+
+
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Pifoo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.x" />
+
+
+
+<link rel="canonical" href="https://pifoo.github.io/2012/03/20/自己动手实现简易版jQuery.html"/>
+
+
+<meta name="description" content="仿jQuery API实现的简易版jQuery, 实现了几个常用API,  有时间 将继续完善.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己动手实现简易版jQuery">
+<meta property="og:url" content="https://pifoo.github.io/2012/03/20/自己动手实现简易版jQuery.html">
+<meta property="og:site_name" content="Pifoo">
+<meta property="og:description" content="仿jQuery API实现的简易版jQuery, 实现了几个常用API,  有时间 将继续完善.">
+<meta property="og:updated_time" content="2017-02-09T08:31:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自己动手实现简易版jQuery">
+<meta name="twitter:description" content="仿jQuery API实现的简易版jQuery, 实现了几个常用API,  有时间 将继续完善.">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e5e36004b48117487ce89e13dc82a734";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+    <title> 自己动手实现简易版jQuery · Pifoo </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Pifoo</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Pifoo</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/categories/">
+        
+        
+          Categories
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags/">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          自己动手实现简易版jQuery
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Mar 20, 2012
+        </span>
+      </div>
+    </header>
+
+    
+
+    <div class="post-content">
+      
+        <p>仿jQuery API实现的简易版jQuery, 实现了几个常用API,  有时间 将继续完善.</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bindEvent</span>(<span class="params">obj, events, fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (obj.addEventListener) &#123;</div><div class="line">        obj.addEventListener(events, fn, <span class="literal">false</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        obj.attachEvent(<span class="string">"on"</span> + events, fn);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getByClass</span>(<span class="params">oParent,sClass</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">var</span> elems = oParent.getElementsByTagName(<span class="string">"*"</span>);</div><div class="line">    <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; elems.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (elems[i].className == sClass) &#123;</div><div class="line">            arr.push(elems[i])</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params">obj, attr</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (obj.currentStyle) &#123;</div><div class="line">        <span class="keyword">return</span> obj.currentStyle[attr];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> getComputedStyle(obj, <span class="literal">false</span>)[attr]; <span class="comment">// IE</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">toArray</span>(<span class="params">elems</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> arr = [];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; elems.length; i++) &#123;</div><div class="line">        arr.push(elems[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Jquery</span>(<span class="params">vArg</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.elements = [];</div><div class="line">    <span class="keyword">switch</span>(<span class="keyword">typeof</span> vArg)&#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">"function"</span>:</div><div class="line">            bindEvent(<span class="built_in">window</span>, <span class="string">"load"</span>, vArg);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"string"</span>:</div><div class="line">            <span class="keyword">switch</span> (vArg.charAt(<span class="number">0</span>)) &#123;</div><div class="line">                <span class="keyword">case</span> <span class="string">"#"</span>:   <span class="comment">// id</span></div><div class="line">                    <span class="keyword">this</span>.elements.push(<span class="built_in">document</span>.getElementById(vArg.substring(<span class="number">1</span>)));</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">case</span> <span class="string">"."</span>:   <span class="comment">// class</span></div><div class="line">                    <span class="keyword">this</span>.elements = getByClass(<span class="built_in">document</span>, vArg.substring(<span class="number">1</span>));</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">                <span class="keyword">default</span>:     <span class="comment">// tag</span></div><div class="line">                    <span class="keyword">this</span>.elements = toArray(<span class="built_in">document</span>.getElementsByTagName(vArg));</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">"object"</span>:</div><div class="line">            <span class="keyword">if</span> (vArg.construct == <span class="built_in">Array</span>) &#123;</div><div class="line">                <span class="keyword">this</span>.elements = vArg;</div><div class="line">            &#125; <span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">this</span>.elements.push(vArg);</div><div class="line">            &#125;</div><div class="line">        <span class="keyword">break</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Jquery.prototype = &#123;</div><div class="line">    <span class="attr">construct</span>: Jquery,</div><div class="line">    <span class="attr">css</span>: <span class="function"><span class="keyword">function</span>(<span class="params">attr, val</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">2</span>) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">                <span class="keyword">this</span>.elements[i].style[attr] = val;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> attr == <span class="string">'object'</span>) &#123;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> attr) &#123;</div><div class="line">                    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">                        <span class="keyword">this</span>.elements[i].style[prop] = attr[prop];</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> getStyle(<span class="keyword">this</span>.elements[<span class="number">0</span>], attr);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">attr</span>: <span class="function"><span class="keyword">function</span>(<span class="params">attr, val</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">2</span>) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">                <span class="keyword">this</span>.elements[i].setAttribute(attr, val);</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.elements[<span class="number">0</span>].getAttribute(attr);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">html</span>: <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span> (str) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">                <span class="keyword">this</span>.elements[i].innerHTML = str;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.elements[<span class="number">0</span>].innerHTML;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">click</span>: <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'click'</span>, fn);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">on</span>: <span class="function"><span class="keyword">function</span>(<span class="params">events,fn</span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">            bindEvent(<span class="keyword">this</span>.elements[i], events, fn);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">hide</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">            <span class="keyword">this</span>.elements[i].style.display = <span class="string">"none"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span></span></div><div class="line">    show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">            <span class="keyword">this</span>.elements[i].style.display = <span class="string">"block"</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">hover</span>: <span class="function"><span class="keyword">function</span>(<span class="params">fnOver, fnOut</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'mouseover'</span>, fnOver),</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'mouseout'</span>, fnOut);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">eq</span>: <span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> $(<span class="keyword">this</span>.elements[num]);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">index</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> elems = <span class="keyword">this</span>.elements[<span class="number">0</span>].parentNode.children;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; elems.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (elems[i] == <span class="keyword">this</span>.elements[<span class="number">0</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">find</span>: <span class="function"><span class="keyword">function</span>(<span class="params">sel</span>)</span>&#123;  </div><div class="line">        <span class="keyword">var</span> arr = [];</div><div class="line">        <span class="keyword">if</span> (sel.charAt(<span class="number">0</span>) == <span class="string">'.'</span>) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">                arr =  arr.concat(getByClass(<span class="keyword">this</span>.elements[i], sel.substring(<span class="number">1</span>)));</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.elements.length; i++) &#123;</div><div class="line">                arr =  arr.concat(toArray(<span class="keyword">this</span>.elements[i].getElementsByTagName(sel)));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> $(arr);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">vArg</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Jquery(vArg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">$.trim = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/^\s+|\s+$/g</span>, <span class="string">""</span>);</div><div class="line">&#125;</div><div class="line">$.extend = <span class="function"><span class="keyword">function</span>(<span class="params">json</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span> (attr <span class="keyword">in</span> json) &#123;</div><div class="line">        $[attr] = json[attr];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$.fn = &#123;&#125;</div><div class="line">$.fn.extend = <span class="function"><span class="keyword">function</span>(<span class="params">json</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span> (attr <span class="keyword">in</span> json) &#123;</div><div class="line">        Jquery.prototype[attr] = json[attr];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/">jQuery</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2013/03/02/Git-起步.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Git 起步</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2012/01/20/CSS3-3d变换和动画.html">
+        <span class="next-text nav-default">CSS3-3d变换和动画</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:pifoo.net@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/pifoo" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2012 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">pifoo</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://pifoo.github.io/2012/03/20/自己动手实现简易版jQuery.html';
+        this.page.identifier = '2012/03/20/自己动手实现简易版jQuery.html';
+        this.page.title = '自己动手实现简易版jQuery';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//pifoo-github-io.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.x"></script>
+
+  </body>
+</html>
